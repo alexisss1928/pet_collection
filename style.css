@@ -1,0 +1,28 @@
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  column-gap: 30px;
+  row-gap: 30px;
+  justify-items: center;
+}
+
+.card {
+  text-align: left;
+  background-color: grey;
+  width: 80%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+form section {
+  display: flex;
+  margin-right: 20px;
+}
+
+.picture {
+  text-align: center;
+}
+
+.picture img {
+  width: 100%;
+}
