@@ -110,6 +110,11 @@ input {
   height: 180px;
   border-radius: 20 px;
   box-shadow: 10px 10px 20px #a1a1a1, -10px -10px 20px #ffffff;
+  transition: 0.2s;
+}
+
+.card:hover {
+  box-shadow: 4px 4px 12px #a1a1a1, -4px -4px 12px #ffffff;
 }
 
 .info {
