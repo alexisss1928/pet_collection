@@ -4,11 +4,16 @@ const containerPuppies = document.querySelector(".cardContainer");
 const form = document.querySelector("#formulario1");
 const addButton = document.querySelector("#addButton");
 const showHide = document.querySelector("#agregar");
-
+/*===============================================
+Obtener datos de Mockapi y cargarlos en la pagina
+===============================================*/
 fetch(API)
   .then((response) => response.json())
   .then((data) => {
-    for (const puppy of data) {
+    /*===============================================
+Iterar por la informacion para mostrarla
+===============================================*/
+    for (const puppy of data.reverse()) {
       containerPuppies.insertAdjacentHTML(
         "beforeend",
         `<div class='card'>
@@ -18,22 +23,26 @@ fetch(API)
               <p>${puppy.race}</p>
           </div>
           <div class="picture" style="background-image: linear-gradient(
-            69deg,
+            79deg,
             rgba(224, 224, 224, 1) 0%,
             rgba(224, 224, 224, 1) 20%,
             rgba(224, 224, 224, 0) 100%
           ),
           url(${puppy.image});">
-            
           </div>
         </div>`
       );
     }
   });
 
+/*===============================================
+Enviar formulario
+===============================================*/
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
+  /*===============================================
+Obtener imagen y subirla a Cloudinary
+===============================================*/
   const files = document.querySelector("[type=file]").files;
   const formData = new FormData();
 
@@ -50,6 +59,9 @@ form.addEventListener("submit", (e) => {
         return response.text();
       })
       .then((data) => {
+        /*==================================================================
+Una vez subida la imagen se obtiene la URL y se manda todo a Mockapi
+==================================================================*/
         let imgData = JSON.parse(data);
 
         let dataSchema = {
@@ -66,12 +78,19 @@ form.addEventListener("submit", (e) => {
           },
           body: JSON.stringify(dataSchema),
         }).then((response) => {
+          /*==============================================
+Reseteamos el formulario y se recarga la pagina
+==============================================*/
+          form.reset();
           location.reload();
         });
       });
   }
 });
 
+/*===============================================
+Evento para menu agregar nueva mascota
+===============================================*/
 addButton.addEventListener("click", () => {
   showHide.classList.toggle("showHide");
   addButton.classList.toggle("rotate");
