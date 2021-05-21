@@ -2,6 +2,8 @@ const API = "https://60a3de2a7c6e8b0017e281a7.mockapi.io/puppy/";
 const url = "https://api.cloudinary.com/v1_1/dogcmulpu/image/upload";
 const containerPuppies = document.querySelector(".cardContainer");
 const form = document.querySelector("#formulario1");
+const addButton = document.querySelector("#addButton");
+const showHide = document.querySelector("#agregar");
 
 fetch(API)
   .then((response) => response.json())
@@ -11,14 +13,17 @@ fetch(API)
         "beforeend",
         `<div class='card'>
           <div class="info">
-            <h3>${puppy.name}</h3>
-            <ul>
-              <li><b>Años:</b> ${puppy.years}</li>
-              <li><b>Especie:</b> ${puppy.race}</li>
-            </ul>
+            <h2>${puppy.name}</h2>
+              <p>${puppy.years} años</p>
+              <p>${puppy.race}</p>
           </div>
-          <div class="picture">
-            <img src="${puppy.image}"/>
+          <div class="picture" style="background-image: linear-gradient(
+            69deg,
+            rgba(224, 224, 224, 1) 0%,
+            rgba(224, 224, 224, 1) 20%,
+            rgba(224, 224, 224, 0) 100%
+          ),
+          url(${puppy.image});">
             
           </div>
         </div>`
@@ -60,11 +65,14 @@ form.addEventListener("submit", (e) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(dataSchema),
-        })
-          .then((response) => response.json())
-          .then((response) => {
-            location.reload();
-          });
+        }).then((response) => {
+          location.reload();
+        });
       });
   }
+});
+
+addButton.addEventListener("click", () => {
+  showHide.classList.toggle("showHide");
+  addButton.classList.toggle("rotate");
 });

@@ -8,36 +8,36 @@
     <title>Document</title>
   </head>
   <body>
-    <section id="agregar">
+    <section id="agregar" class="showHide">
       <form name="formulario1" id="formulario1" enctype="multipart/form-data">
         <h2>Nueva mascota</h2>
         <section>
           <p>
             <label for="name">
               <span>Nombre de la mascota:</span>
-              <strong><abbr title="required">*</abbr></strong>
-            </label>
+              <strong><abbr title="required">*</abbr></strong> </label
+            ><br />
             <input type="text" id="name" name="name" required />
           </p>
           <p>
             <label for="years">
               <span>Edad de la mascota:</span>
-              <strong><abbr title="required">*</abbr></strong>
-            </label>
+              <strong><abbr title="required">*</abbr></strong> </label
+            ><br />
             <input type="number" id="years" name="years" required />
           </p>
           <p>
             <label for="race">
               <span>Especie de la mascota:</span>
-              <strong><abbr title="required">*</abbr></strong>
-            </label>
+              <strong><abbr title="required">*</abbr></strong> </label
+            ><br />
             <input type="text" id="race" name="race" required />
           </p>
           <p>
             <label for="files[]">
               <span>Foto de tu mascota:</span>
-              <strong><abbr title="required">*</abbr></strong>
-            </label>
+              <strong><abbr title="required">*</abbr></strong> </label
+            ><br />
             <input type="file" name="files[]" id="file" />
           </p>
 
@@ -50,9 +50,10 @@
       </form>
     </section>
     <section id="coleccion">
-      <h1>Mi coleccion de mascotas</h1>
+      <h1>Coleccion de mascotas</h1>
       <div class="cardContainer"></div>
     </section>
+    <div id="addButton"><img src="./assets/plus-solid.svg" /></div>
     <script src="index.js"></script>
   </body>
 </html>

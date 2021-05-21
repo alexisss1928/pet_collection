@@ -1,6 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+body {
+  background: rgb(224, 224, 224);
+  color: #383838;
+  font-family: "Mukta", sans-serif;
+  margin: 0 20px 20px 20px;
+  padding: 0 40px;
+}
+h1,
+h2 {
+  font-family: "Lobster", cursive;
+  font-size: 4rem;
+  line-height: 3.375rem;
+}
+
+h2 {
+  color: #202020;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-top: 0;
+}
+
+#agregar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(41, 133, 145);
+  background-image: linear-gradient(
+      20deg,
+      rgba(113, 159, 176, 1) 0%,
+      rgba(114, 131, 162, 0.9415966215587798) 60%,
+      rgba(114, 106, 149, 0) 100%
+    ),
+    linear-gradient(
+      7deg,
+      rgba(53, 31, 57, 1) 0%,
+      rgba(114, 131, 162, 0.9415966215587798) 60%,
+      rgba(114, 106, 149, 0) 100%
+    ),
+    linear-gradient(
+      219deg,
+      rgba(53, 31, 57, 1) 0%,
+      rgba(53, 31, 57, 1) 46%,
+      rgba(114, 106, 149, 0) 100%
+    );
+}
+
+form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+form h2 {
+  color: #fff;
+  font-size: 4rem;
+}
+
+input {
+  border-radius: 50px;
+  width: 300px;
+  height: 30px;
+  padding: 10px 20px;
+}
+
+#file::after {
+  content: "Subir archivo";
+  height: 30px;
+  background-color: red;
+}
+
+#addButton {
+  border-radius: 50%;
+  background-color: rgb(41, 133, 145);
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  transition: 0.5s;
+}
+
+#addButton img {
+  width: 100%;
+  height: 100%;
+}
+
+#coleccion {
+  text-align: center;
+}
+
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   column-gap: 30px;
   row-gap: 30px;
   justify-items: center;
@@ -8,21 +107,43 @@
 
 .card {
   text-align: left;
-  background-color: grey;
-  width: 80%;
-  padding: 20px;
-  border-radius: 5px;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  color: grey;
+  overflow: hidden;
+  height: 150px;
+  border-radius: 20 px;
+  box-shadow: 22px 22px 44px #969696, -22px -22px 44px #ffffff;
 }
 
-form section {
-  display: flex;
-  margin-right: 20px;
+.info {
+  width: 40%;
+  padding: 20px;
+  line-height: 0;
+}
+
+.info p {
+  margin-top: 10px;
+  line-height: 0.3rem;
 }
 
 .picture {
+  width: 60%;
+  height: 100%;
   text-align: center;
+  overflow: hidden;
+  background-size: cover;
 }
 
 .picture img {
   width: 100%;
+}
+
+.showHide {
+  display: none;
+}
+.rotate {
+  transform: rotate(405deg);
+  background-color: rgb(134, 67, 67) !important;
 }
