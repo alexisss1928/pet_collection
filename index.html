@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="./assets/dog.png" type="image/x-icon" />
+    <script src="./assets/timeago.js-3.x.x/dist/timeago.min.js"></script>
     <title>Coleccion de Mascotas</title>
   </head>
   <body>
@@ -15,31 +16,38 @@
         <section>
           <p>
             <label for="name">
-              <span>Nombre de la mascota:</span>
+              <span>Nombre:</span>
               <strong><abbr title="required">*</abbr></strong> </label
             ><br />
             <input type="text" id="name" name="name" required />
           </p>
           <p>
             <label for="years">
-              <span>Edad de la mascota:</span>
+              <span>Edad:</span>
               <strong><abbr title="required">*</abbr></strong> </label
             ><br />
             <input type="number" id="years" name="years" required />
           </p>
           <p>
             <label for="race">
-              <span>Especie de la mascota:</span>
+              <span>Especie:</span>
               <strong><abbr title="required">*</abbr></strong> </label
             ><br />
             <input type="text" id="race" name="race" required />
           </p>
           <p>
-            <label for="files[]">
-              <span>Foto de tu mascota:</span>
+            <label for="desc">
+              <span>Descripcion:</span>
               <strong><abbr title="required">*</abbr></strong> </label
             ><br />
-            <input type="file" name="files[]" id="file" />
+            <textarea name="desc" id="desc" maxlength="35" required></textarea>
+          </p>
+          <p>
+            <label for="files[]">
+              <span>Foto:</span>
+              <strong><abbr title="required">*</abbr></strong> </label
+            ><br />
+            <input type="file" name="files[]" id="file" required />
           </p>
 
           <section>

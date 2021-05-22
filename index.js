@@ -4,6 +4,7 @@ const containerPuppies = document.querySelector(".cardContainer");
 const form = document.querySelector("#formulario1");
 const addButton = document.querySelector("#addButton");
 const showHide = document.querySelector("#agregar");
+var timeagoInstance = timeago();
 /*===============================================
 Obtener datos de Mockapi y cargarlos en la pagina
 ===============================================*/
@@ -18,9 +19,10 @@ Iterar por la informacion para mostrarla
         "beforeend",
         `<div class='card'>
           <div class="info">
-            <h2>${puppy.name}</h2>
-              <p>${puppy.years} años</p>
-              <p>${puppy.race}</p>
+            <h2>${puppy.name}<br><span>${puppy.years} años</span></h2>
+              <p><b>Especie:</b> ${puppy.race}</p>
+              <p>${puppy.desc}</p>
+              <p>${timeagoInstance.format(puppy.date)}</p>
           </div>
           <div class="picture" style="background-image: linear-gradient(
             79deg,
@@ -29,7 +31,6 @@ Iterar por la informacion para mostrarla
             rgba(224, 224, 224, 0) 100%
           ),
           url(${puppy.image});">
-          </div>
         </div>`
       );
     }
@@ -68,7 +69,9 @@ Una vez subida la imagen se obtiene la URL y se manda todo a Mockapi
           name: form["name"].value,
           years: form["years"].value,
           race: form["race"].value,
+          desc: form["desc"].value,
           image: imgData.secure_url,
+          date: new Date(),
         };
 
         fetch(API, {
