@@ -94,11 +94,13 @@ textarea {
 }
 
 .button {
+  margin-top: 10px;
   padding: 10px 20px;
-  background-color: #94bb6c;
-  border: navajowhite;
+  background-color: #6a8b48;
+  border: none;
   border-radius: 5px;
-  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
 }
 
 #addButton {
