@@ -131,9 +131,9 @@ textarea {
   background-size: contain;
 }
 
-.card:hover {
+/* .card:hover {
   box-shadow: 4px 4px 12px #a1a1a1, -4px -4px 12px #ffffff;
-}
+} */
 
 .info {
   width: 50%;
