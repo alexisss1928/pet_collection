@@ -34,6 +34,14 @@ Iterar por la informacion para mostrarla
         </div>`
       );
     }
+
+    const cards = Array.from(document.querySelectorAll(".card"));
+    cards.forEach((card) =>
+      card.addEventListener("click", (e) => {
+        card.classList.toggle("lightboxCard");
+        document.querySelector(".lightbox").classList.toggle("lightboxActive");
+      })
+    );
   });
 
 /*===============================================

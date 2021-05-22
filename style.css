@@ -23,6 +23,15 @@ h2 {
   margin-top: 0;
 }
 
+.lightbox {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 #agregar {
   position: fixed;
   width: 100%;
@@ -185,4 +194,46 @@ textarea {
     right: 20px;
     bottom: 20px;
   }
+}
+
+/*===============================================
+lightbox
+===============================================*/
+.lightboxActive {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.lightboxCard {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 50%;
+  background: #e0e0e0;
+  z-index: 999;
+  box-shadow: unset;
+}
+
+.lightboxCard .picture {
+  width: 100% !important;
+}
+
+.lightboxCard .info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.lightboxCard h2 {
+  font-size: 2.5rem;
+}
+
+.lightboxCard .info * {
+  margin-top: 10px;
 }
