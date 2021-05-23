@@ -24,13 +24,10 @@ Iterar por la informacion para mostrarla
               <p>${puppy.desc}</p>
               <p>${timeagoInstance.format(puppy.date)}</p>
           </div>
-          <div class="picture" style="background-image: linear-gradient(
-            79deg,
-            rgba(224, 224, 224, 1) 0%,
-            rgba(224, 224, 224, 1) 20%,
-            rgba(224, 224, 224, 0) 100%
-          ),
-          url(${puppy.image});">
+          <div class="picture">
+          <img src=${puppy.image} alt="" />
+          </div>
+          <div class="gradient"></div>
         </div>`
       );
     }
@@ -105,4 +102,17 @@ Evento para menu agregar nueva mascota
 addButton.addEventListener("click", () => {
   showHide.classList.toggle("showHide");
   addButton.classList.toggle("rotate");
+});
+
+let button = document.querySelector("#dark-mode");
+
+button.addEventListener("click", () => {
+  document.documentElement.classList.toggle("dark-mode");
+  document.querySelector("#dark-mode").classList.toggle("dark-mode-active");
+  document.querySelector("#agregar").classList.toggle("dark-mode");
+
+  const cardsInvert = Array.from(
+    document.querySelectorAll(".cardContainer img")
+  );
+  cardsInvert.forEach((cardInvert) => cardInvert.classList.toggle("dark-mode"));
 });

@@ -2,10 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 body {
-  background: rgb(224, 224, 224);
+  background: #e0e0e0;
   color: #383838;
   font-family: "Mukta", sans-serif;
-  margin: 0 20px 20px 20px;
   padding: 0 40px;
 }
 h1,
@@ -24,13 +23,29 @@ h2 {
   margin-top: 0;
 }
 
-.lightbox {
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+#dark-mode {
+  border: none;
+  width: 90px;
+  height: 90px;
+  position: fixed !important;
+  top: 0px;
+  right: 40px;
+  background-color: #d2d2d2;
+  background-image: url(./assets/lamp_on.svg);
+  border-radius: 0 0 50px 50px;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 9999;
+}
+
+.dark-mode-active {
+  background-image: url(./assets/lamp_off.svg) !important;
+}
+
+#dark-mode img {
+  width: 100%;
+  height: 100%;
 }
 
 #agregar {
@@ -58,6 +73,7 @@ h2 {
       rgba(53, 31, 57, 1) 46%,
       rgba(114, 106, 149, 0) 100%
     );
+  z-index: 9999;
 }
 
 form {
@@ -113,15 +129,12 @@ textarea {
   right: 40px;
   bottom: 40px;
   transition: 0.5s;
+  z-index: 99999;
 }
 
 #addButton img {
   width: 100%;
   height: 100%;
-}
-
-#coleccion {
-  text-align: center;
 }
 
 .cardContainer {
@@ -133,6 +146,7 @@ textarea {
 }
 
 .card {
+  position: relative;
   text-align: left;
   width: 100%;
   border-radius: 15px;
@@ -141,12 +155,23 @@ textarea {
   overflow: hidden;
   height: 200px;
   border-radius: 20 px;
-  box-shadow: 10px 10px 20px #5a5a5a, -10px -10px 20px #ffffff;
+  box-shadow: 5px 5px 10px #808080, -5px -5px 10px #ffffff;
   border: solid 7px #e0e0e0;
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain;
   box-sizing: border-box;
+}
+
+.gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background-image: linear-gradient(
+    79deg,
+    rgba(224, 224, 224, 1) 0%,
+    rgba(224, 224, 224, 1) 60%,
+    rgba(224, 224, 224, 0.5) 70%,
+    rgba(224, 224, 224, 0.3) 80%
+  );
 }
 
 .info {
@@ -158,6 +183,7 @@ textarea {
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 9;
 }
 
 .info h2,
@@ -179,12 +205,14 @@ textarea {
 
 .picture {
   width: 50%;
-  height: 100%;
-  text-align: center;
   overflow: hidden;
-  background-size: cover;
-  background-position: center;
   transition: 0.2s;
+}
+
+.picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .showHide {
@@ -195,6 +223,9 @@ textarea {
   background-color: rgb(134, 67, 67) !important;
 }
 
+/*===============================================
+Telefono
+===============================================*/
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 3rem;
@@ -213,6 +244,15 @@ textarea {
 /*===============================================
 lightbox
 ===============================================*/
+.lightbox {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .lightboxActive {
   position: fixed;
   width: 100vw;
@@ -233,6 +273,16 @@ lightbox
   z-index: 999;
 }
 
+.lightboxCard .gradient {
+  background-image: linear-gradient(
+    79deg,
+    rgba(224, 224, 224, 1) 0%,
+    rgba(224, 224, 224, 1) 20%,
+    rgba(224, 224, 224, 0.5) 30%,
+    rgba(224, 224, 224, 0.3) 40%
+  );
+}
+
 .lightboxCard .picture {
   width: 100% !important;
 }
@@ -249,4 +299,11 @@ lightbox
 
 .lightboxCard .info * {
   margin-top: 10px;
+}
+
+.dark-mode {
+  filter: invert(100%);
+  height: 100vh;
+  background: #1e1e1e;
+  position: relative;
 }
