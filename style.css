@@ -186,7 +186,7 @@ textarea {
   height: 200px;
   border-radius: 20 px;
   -webkit-box-shadow: 5px 5px 10px #808080, -5px -5px 10px #ffffff;
-  box-shadow: 5px 5px 10px #808080, -5px -5px 10px #ffffff;
+  box-shadow: 5px 5px 10px #aeaeae, -5px -5px 10px #fff;
   border: solid 7px #e0e0e0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
