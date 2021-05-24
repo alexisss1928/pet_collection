@@ -201,8 +201,7 @@ textarea {
     79deg,
     rgba(224, 224, 224, 1) 0%,
     rgba(224, 224, 224, 1) 60%,
-    rgba(224, 224, 224, 0.8) 70%,
-    rgba(224, 224, 224, 0.6) 80%
+    rgba(224, 224, 224, 0.5) 80%
   );
 }
 
@@ -358,6 +357,5 @@ lightbox
   -webkit-filter: invert(100%);
   filter: invert(100%);
   height: 100vh;
-  background: #1e1e1e;
   position: relative;
 }
