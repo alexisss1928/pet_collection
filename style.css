@@ -38,6 +38,7 @@ h2 {
   background-repeat: no-repeat;
   background-position: center;
   z-index: 9999;
+  cursor: pointer;
 }
 
 .dark-mode-active {
@@ -127,6 +128,22 @@ textarea {
   border: none;
 }
 
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px 0 12px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.custom-file-upload img {
+  height: 30px;
+  filter: opacity(0.7);
+}
+
 #file {
   background-color: #94acbd;
   padding: 15px 10px;
@@ -140,6 +157,7 @@ textarea {
   border-radius: 5px;
   font-size: 1.2rem;
   color: #fff;
+  cursor: pointer;
 }
 
 #addButton {
@@ -155,6 +173,7 @@ textarea {
   -o-transition: 0.5s;
   transition: 0.5s;
   z-index: 99999;
+  cursor: pointer;
 }
 
 #addButton img {
@@ -167,7 +186,6 @@ textarea {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   -webkit-column-gap: 30px;
-  -moz-column-gap: 30px;
   column-gap: 30px;
   row-gap: 30px;
   justify-items: center;
@@ -190,6 +208,7 @@ textarea {
   border: solid 7px #e0e0e0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .gradient {
@@ -358,4 +377,5 @@ lightbox
   filter: invert(100%);
   height: 100vh;
   position: relative;
+  background-color: #1e1e1e;
 }

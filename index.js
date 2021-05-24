@@ -104,9 +104,14 @@ addButton.addEventListener("click", () => {
   addButton.classList.toggle("rotate");
 });
 
+/*===============================================
+Modo Oscuro
+===============================================*/
 let button = document.querySelector("#dark-mode");
 
 button.addEventListener("click", () => {
+  let audio = new Audio("./assets/Light_Switch.mp3");
+  audio.play();
   document.documentElement.classList.toggle("dark-mode");
   document.querySelector("#dark-mode").classList.toggle("dark-mode-active");
   document.querySelector("#agregar").classList.toggle("dark-mode");
